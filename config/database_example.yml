@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  host: 127.0.0.1
+  port: 5432
+  username: postgres
+  password: secret
+
+development:
+  <<: *default
+  database: spa_backend_development
+
+test:
+  <<: *default
+  database: spa_backend_test
+
