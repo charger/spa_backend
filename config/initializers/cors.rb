@@ -1,8 +1,11 @@
-# https://github.com/cyu/rack-cors
+#https://github.com/cyu/rack-cors
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  debug true
+
   allow do
-    origins 'localhost:3000', '127.0.0.1:3000',
-            /\Ahttp:\/\/107\.23\.7\.96(:\d+)?\z/
+    origins 'localhost:3000', '127.0.0.2:3000',
+            'spa.front.s3-website-us-east-1.amazonaws.com'
 
     resource '*',
       headers: :any,

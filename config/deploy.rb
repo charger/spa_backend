@@ -3,7 +3,7 @@ lock '3.6.0'
 
 set :application, 'spa_backend'
 set :repo_url, 'git@github.com:charger/spa_backend.git'
-set :branch, 'master'
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :deploy_to, '/home/deploy/applications/spa_backend'
 
 set :log_level, :info
