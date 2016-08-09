@@ -42,3 +42,6 @@ bower.json
 .byebug_history
 .idea
 /config/database.yml
+/config/provision/keys/*.pem
+/config/provision/configs/settings.yml
+/config/provision/configs/secrets.yml
