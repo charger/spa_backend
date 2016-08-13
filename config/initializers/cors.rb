@@ -4,7 +4,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   debug true
 
   allow do
-    origins 'localhost:3000', '127.0.0.2:3000',
+    origins 'localhost:4000', '127.0.0.1:4000',
             'spa.front.s3-website-us-east-1.amazonaws.com'
 
     resource '*',
