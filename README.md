@@ -6,4 +6,5 @@ Nothing interesting there.
 
 ## Run provision:
 
+`cd config/provision`
 `ansible-playbook -ispa.backend, playbook.yml`
