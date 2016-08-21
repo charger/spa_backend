@@ -63,6 +63,12 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    carrierwave (0.11.2)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+      mimemagic (>= 0.3.0)
     concurrent-ruby (1.0.2)
     diff-lcs (1.2.5)
     docile (1.1.5)
@@ -78,6 +84,9 @@ GEM
     i18n (0.7.0)
     json (2.0.2)
     jwt (1.5.4)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -89,6 +98,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.8.3)
     net-scp (1.2.1)
@@ -101,6 +111,10 @@ GEM
     parser (2.3.1.2)
       ast (~> 2.2)
     pg (0.18.4)
+    pg_search (1.0.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     pkg-config (1.1.7)
     powerpack (0.1.1)
     puma (3.6.0)
@@ -197,10 +211,13 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capistrano3-puma
+  carrierwave
   factory_girl_rails
   jwt
+  kaminari
   listen (~> 3.0.5)
   pg (~> 0.18)
+  pg_search
   puma (~> 3.0)
   rack-cors
   rails (~> 5.0.0)

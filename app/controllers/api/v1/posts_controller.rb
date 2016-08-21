@@ -1,10 +1,10 @@
-class Api::PostsController < ApplicationController
+class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    @posts = Post.all
+    filter = PostFilter.new(filter_params)
 
-    render json: @posts
+    render json: filter.posts
   end
 
   def show
@@ -39,6 +39,15 @@ class Api::PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :username, :body)
+      params.require(:post).permit(:title, :body, :image)
+    end
+
+    def filter_params
+      {
+        filter: params[:filter],
+        order: params[:order],
+        order_direction: params[:order_direction],
+        page: params[:page]
+      }
     end
 end
