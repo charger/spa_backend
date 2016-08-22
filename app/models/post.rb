@@ -3,5 +3,5 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 500 }
   mount_uploader :image, ImageUploader
   include PgSearch
-  pg_search_scope :search_by_content, :against => [:title, :body]
+  pg_search_scope :search_by_content, :against => [:title, :body], :using => { tsearch: { any_word: true, prefix: true } }
 end
