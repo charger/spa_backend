@@ -4,7 +4,7 @@ class Api::V1::PostsController < ApplicationController
   def index
     filter = PostFilter.new(filter_params)
 
-    render json: filter.posts
+    render json: { items: filter.posts, pagination: { page: params[:page] || 1, total_pages: filter.posts.total_pages} }
   end
 
   def show

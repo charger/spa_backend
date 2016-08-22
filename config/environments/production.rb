@@ -75,4 +75,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.asset_host = 'http://ec2-107-23-7-96.compute-1.amazonaws.com'
 end

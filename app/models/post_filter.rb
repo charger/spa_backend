@@ -6,8 +6,8 @@ class PostFilter
 
   def posts
     res = Post.all
-    res = res.search_by_content(filter) if filter
-    if order
+    res = res.search_by_content(filter) if filter.present?
+    if order.present?
       direction = order_direction || 'asc'
       direction = 'asc' unless %w(asc desc).include?(direction)
       res = res.order(order => direction)

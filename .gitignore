@@ -45,3 +45,4 @@ bower.json
 /config/provision/keys/*.pem
 /config/provision/configs/settings.yml
 /config/provision/configs/secrets.yml
+/public/uploads/
